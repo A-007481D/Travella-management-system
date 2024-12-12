@@ -29,7 +29,13 @@
     </aside>
         <main class="flex-grow bg-[#f2f6fa] overflow-auto">
         <header class="sticky top-0 drop-shadow px-5 w-full flex bg-white items-center">
-            <div class="flex items-center w-1/2">
+        <div class="flex items-center w-1/2">
+                <button>
+                    <svg width="26px" height="75px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                        <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" 
+                              stroke="#81868d" stroke-width="1.8719999999999999" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
                 <input type="search" 
                        class="w-full p-4 rounded-s font-thin text-gray-500 outline-none ml-4" 
                        placeholder="Type to search...">
@@ -60,6 +66,10 @@
             </div>
         </section>
         <section id="guest-table" class="p-6">
+        <div class="flex justify-between p-1">
+                <h2 class="text-2xl font-semibold mb-4">Guests</h2>
+                <button onclick="document.getElementById('AddGuestForm').classList.remove('hidden')" class="block px-4 bg-blue-600 rounded hover:bg-blue-700 text-white font-medium">Add Guest</button>
+            </div>
             <table class="w-full bg-white shadow rounded mb-5 table-fixed border-collapse">
                 <thead class="bg-gray-200">
                     <tr>
@@ -149,6 +159,60 @@
             </table>
         </section>
     </main>
+    <form action="" method="POST" id="AddGuestForm" class="fixed inset-0 bg-black z-50 bg-opacity-50 hidden flex items-center justify-center">
+
+        <div id="modal" class="container z-50 mx-auto p-6 rounded-md bg-gray-100 font-bold w-full sm:w-2/3 lg:w-1/3">
+          <h2 class="text-4xl text-start break-normal mb-8 ml-2">New Guest
+          </h2>
+          <div class="space-y-6">
+    
+            <div class="flex space-x-4">
+              <div class="flex-1">
+                <label class="ml-1">First Name</label>
+                <input id="GuestName" name="GuestName" class="rounded-lg px-3 py-2 h-12 w-full bg-white-200" type="text"
+                  placeholder="Guest first name" >
+              </div>
+              <div class="flex-1">
+                <label class="ml-1">Last Name</label>
+                <input id="GuestLastName" name="GuestLastName" class="rounded-lg px-3 py-2 h-12 w-full bg-white-200" type="text"
+                  placeholder="Guest last name" >
+              </div>
+            </div>
+    
+            <div class="flex space-x-4">
+                <div class="flex-1">
+                    <label class="ml-1">Email</label>
+                    <input id="GuestEmail" name="GuestEmail" class="rounded-lg px-3 py-2 h-12 w-full bg-white-200" type="email"
+                      placeholder="Guest Email" >
+                  </div>
+                  <div class="flex-1">
+                    <label class="ml-1">Telephone</label>
+                    <input id="GuestTelephone" name="GuestTelephone" class="rounded-lg px-3 py-2 h-12 w-full bg-white-200" type="number"
+                      placeholder="Guest phone number" >
+                  </div>
+            </div>
+            <div class="flex space-x-4">
+                <div class="flex-1">
+                    <label class="ml-1">Address</label>
+                    <input id="GuestAddress" name="GuestAddress" class="rounded-lg px-3 py-2 h-12 w-full bg-white-200" type="text"
+                      placeholder="Guest Address" >
+                  </div>
+                  <div class="flex-1">
+                    <label class="ml-1">Birth Date</label>
+                    <input id="GuestBirthD" name="GuestBirthD" class="rounded-lg px-3 py-2 h-12 w-full bg-white-200" type="date"
+                      placeholder="Guest Birth Date" >
+                  </div>
+            </div>
+            <div class="flex justify-start space-x-4 mt-4">
+              <button type="submit" id="AddGuest" class="AddGuest bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md px-7 py-2">Add
+              </button>
+              <button type="button" onclick="document.getElementById('AddGuestForm').classList.add('hidden')"
+                class=" sm:bg-red-500  bg-gray-500 hover:bg-red-700 text-black font-medium rounded-md px-4 py-2">Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+    </form>
     
 </body>
 </html>
