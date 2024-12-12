@@ -25,12 +25,16 @@
             <!-- <button class="block px-4 py-2 bg-blue-700 rounded hover:bg-blue-600">Add Activity</button>
             <button class="block px-4 py-2 bg-blue-700 rounded hover:bg-blue-600">Add Guest</button> -->
         </nav>
-        
+        <div class="p-4 border-t border-gray-700">
+            <a href="index.html">
+                <button class="w-full px-4 py-2 bg-blue-500 rounded hover:bg-blue-600">Logout</button>
+            </a>
+        </div>
     </aside>
         <main class="flex-grow bg-[#f2f6fa] overflow-auto">
         <header class="sticky top-0 drop-shadow px-5 w-full flex bg-white items-center">
-        <div class="flex items-center w-1/2">
-                <button>
+            <div class="flex items-center w-1/2">
+                <button class="hover:animate-pulse">
                     <svg width="26px" height="75px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                         <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" 
                               stroke="#81868d" stroke-width="1.8719999999999999" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -47,26 +51,26 @@
                 </div>
                 <img src="img/moi.png" alt="Profile Picture" class="w-8 h-8 rounded-full cursor-pointer">
             </div>
-        </header>    
+        </header>
         <section id="statistics" class="mb-8 p-6">
             <h2 class="text-2xl font-semibold mb-4">Statistics</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="p-4 bg-white shadow-md duration-500 cursor-pointer rounded">
+                <div class="p-4 bg-white shadow-md hover:shadow-2xl duration-500 hover:bg-green-300 cursor-pointer rounded">
                     <h3 class="text-lg font-medium">Active Users</h3>
                     <p class="text-2xl font-bold">0</p>
                 </div>
-                <div class="p-4 bg-white shadow-md duration-500 cursor-pointer rounded">
+                <div class="p-4 bg-white shadow-md hover:shadow-2xl duration-500 hover:bg-green-300  cursor-pointer rounded">
                     <h3 class="text-lg font-medium">Active Reservations</h3>
                     <p class="text-2xl font-bold">0</p>
                 </div>
-                <div class="p-4 bg-white shadow-md duration-500 cursor-pointer rounded">
+                <div class="p-4 bg-white shadow-md hover:shadow-2xl duration-500 hover:bg-blue-300  cursor-pointer rounded">
                     <h3 class="text-lg font-medium">New Signups</h3>
                     <p class="text-2xl font-bold">0</p>
                 </div>
             </div>
         </section>
         <section id="guest-table" class="p-6">
-        <div class="flex justify-between p-1">
+            <div class="flex justify-between p-1">
                 <h2 class="text-2xl font-semibold mb-4">Guests</h2>
                 <button onclick="document.getElementById('AddGuestForm').classList.remove('hidden')" class="block px-4 bg-blue-600 rounded hover:bg-blue-700 text-white font-medium">Add Guest</button>
             </div>
@@ -147,6 +151,7 @@
                         </th>
                     </tr>
                 </thead>
+                <tbody>
                      <tr class="bg-white hover:bg-gray-100 cursor-pointer">
                         <td class="py-2 px-4 border truncate">7</td>
                         <td class="py-2 px-4 border truncate">Abdelmalek</td>
@@ -156,6 +161,7 @@
                         <td class="py-2 px-4 border truncate">addresss</td>
                         <td class="py-2 px-4 border truncate">1000-100-100</td>
                         <td class="py-2 px-4 border truncate">Delete Edit</td>
+                </tbody>
             </table>
         </section>
     </main>
@@ -213,6 +219,5 @@
           </div>
         </div>
     </form>
-    
 </body>
 </html>
