@@ -59,6 +59,95 @@
                 </div>
             </div>
         </section>
+        <section id="guest-table" class="p-6">
+            <table class="w-full bg-white shadow rounded mb-5 table-fixed border-collapse">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>ID</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>First Name</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>Last Name</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>Email</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>Phone</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>Address</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>Birth Date</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                        <th class="px-4 py-2 text-left truncate cursor-pointer group">
+                            <span>Controls</span>
+                            <!-- <span class="ml-2 transform group-hover:scale-110 transition-transform">
+                                ▲
+                            </span>
+                            <span class="ml-1 transform group-hover:scale-110 transition-transform opacity-50">
+                                ▼
+                            </span> -->
+                        </th>
+                    </tr>
+                </thead>
+                     <tr class="bg-white hover:bg-gray-100 cursor-pointer">
+                        <td class="py-2 px-4 border truncate">7</td>
+                        <td class="py-2 px-4 border truncate">Abdelmalek</td>
+                        <td class="py-2 px-4 border truncate">Labid</td>
+                        <td class="py-2 px-4 border truncate">a.labid@gmail.com</td>
+                        <td class="py-2 px-4 border truncate">0656558898</td>
+                        <td class="py-2 px-4 border truncate">addresss</td>
+                        <td class="py-2 px-4 border truncate">1000-100-100</td>
+                        <td class="py-2 px-4 border truncate">Delete Edit</td>
+            </table>
+        </section>
     </main>
     
 </body>
