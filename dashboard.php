@@ -1,11 +1,29 @@
 <?php
 require_once ('dbConnect.php');
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $F_name = $_POST['GuestName'];
+    $L_name = $_POST['GuestLastName'];
+    $Email = $_POST['GuestEmail'];
+    $Telephone = $_POST['GuestTelephone'];
+    $Address = $_POST['GuestAddress'];
+    $Birthday = $_POST['GuestBirthD'];
+
+    $insertData = "INSERT INTO client (First_name, Last_name, Email, Telephone, Address, Birth_date) 
+    VALUES ('$F_name', '$L_name', '$Email', '$Telephone', '$Address', '$Birthday')";
+
+    if (mysqli_query($DBconnect, $insertData)) {
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    } else {
+        echo "Error: " . mysqli_error($DBconnect);
+    }
+}
 $fetchData = "SELECT * FROM  client";
 $result = mysqli_query($DBconnect, $fetchData);
 
 if (!$result) {
-    die("Error fetching data: " . mysqli_error($DBconnect));
+     die("Error fetching data: " . mysqli_error($DBconnect)); 
 }
 ?>
 
