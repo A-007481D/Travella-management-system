@@ -1,3 +1,14 @@
+<?php
+require_once ('dbConnect.php');
+
+$fetchData = "SELECT * FROM  client";
+$result = mysqli_query($DBconnect, $fetchData);
+
+if (!$result) {
+    die("Error fetching data: " . mysqli_error($DBconnect));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,15 +163,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                     <tr class="bg-white hover:bg-gray-100 cursor-pointer">
-                        <td class="py-2 px-4 border truncate">7</td>
-                        <td class="py-2 px-4 border truncate">Abdelmalek</td>
-                        <td class="py-2 px-4 border truncate">Labid</td>
-                        <td class="py-2 px-4 border truncate">a.labid@gmail.com</td>
-                        <td class="py-2 px-4 border truncate">0656558898</td>
-                        <td class="py-2 px-4 border truncate">addresss</td>
-                        <td class="py-2 px-4 border truncate">1000-100-100</td>
-                        <td class="py-2 px-4 border truncate">Delete Edit</td>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <tr class="bg-white hover:bg-gray-100 cursor-pointer">
+                        <td class="py-2 px-4 border truncate"><?= $row['ClientID'] ?></td>
+                        <td class="py-2 px-4 border truncate"><?= $row['First_name'] ?></td>
+                        <td class="py-2 px-4 border truncate"><?= $row['Last_name'] ?></td>
+                        <td class="py-2 px-4 border truncate"><?= $row['Email'] ?></td>
+                        <td class="py-2 px-4 border truncate"><?= $row['Telephone'] ?></td>
+                        <td class="py-2 px-4 border truncate"><?= $row['Address'] ?></td>
+                        <td class="py-2 px-4 border truncate"><?= $row['Birth_date'] ?></td>
+                        <td class="py-2 px-4 border truncate">Edit Delete</td>
+                    </tr>
+                <?php endwhile; ?>
+                </tr>
                 </tbody>
             </table>
         </section>
