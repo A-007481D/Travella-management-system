@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Address = $_POST['GuestAddress'];
     $Birthday = $_POST['GuestBirthD'];
 
+if (!empty($F_name) && !empty($L_name) && !empty($Email) && !empty($Telephone) && !empty($Address) && !empty($Birthday)) {
     $insertData = "INSERT INTO client (First_name, Last_name, Email, Telephone, Address, Birth_date) 
     VALUES ('$F_name', '$L_name', '$Email', '$Telephone', '$Address', '$Birthday')";
 
@@ -18,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Error: " . mysqli_error($DBconnect);
     }
+}
 }
 $fetchData = "SELECT * FROM  client";
 $result = mysqli_query($DBconnect, $fetchData);
@@ -47,10 +49,10 @@ if (!$result) {
             <p class="font-medium">Dashboard</p>
         </div>
         <nav class="flex-grow p-4 space-y-4">
-            <a href="#statistics" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Statistics</a>
-            <a href="#guests" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Guests</a>
-            <a href="dashractivity.html" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Activities</a> 
-            <a href="dashreserv.html" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Reservations</a>
+            <!-- <a href="#statistics" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Statistics</a> -->
+            <a href="dashboard.php" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Guests</a>
+            <a href="activity.php" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Activities</a> 
+            <a href="reservation.php" class="block px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Reservations</a>
             <!-- <button class="block px-4 py-2 bg-blue-700 rounded hover:bg-blue-600">Add Activity</button>
             <button class="block px-4 py-2 bg-blue-700 rounded hover:bg-blue-600">Add Guest</button> -->
         </nav>
@@ -81,7 +83,7 @@ if (!$result) {
                 <img src="img/moi.png" alt="Profile Picture" class="w-8 h-8 rounded-full cursor-pointer">
             </div>
         </header>
-        <section id="statistics" class="mb-8 p-6">
+        <!-- <section id="statistics" class="mb-8 p-6">
             <h2 class="text-2xl font-semibold mb-4">Statistics</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="p-4 bg-white shadow-md hover:shadow-2xl duration-500 hover:bg-green-300 cursor-pointer rounded">
@@ -97,7 +99,7 @@ if (!$result) {
                     <p class="text-2xl font-bold">0</p>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section id="guest-table" class="p-6">
             <div class="flex justify-between p-1">
                 <h2 class="text-2xl font-semibold mb-4">Guests</h2>
@@ -183,15 +185,17 @@ if (!$result) {
                 <tbody>
                 <?php while ($row = mysqli_fetch_assoc($result)): ?>
                     <tr class="bg-white hover:bg-gray-100 cursor-pointer">
-                        <td class="py-2 px-4 border truncate"><?= $row['ClientID'] ?></td>
+                        <td class="py-2 px-4 border truncate">#<?= $row['ClientID'] ?></td>
                         <td class="py-2 px-4 border truncate"><?= $row['First_name'] ?></td>
                         <td class="py-2 px-4 border truncate"><?= $row['Last_name'] ?></td>
                         <td class="py-2 px-4 border truncate"><?= $row['Email'] ?></td>
                         <td class="py-2 px-4 border truncate"><?= $row['Telephone'] ?></td>
                         <td class="py-2 px-4 border truncate"><?= $row['Address'] ?></td>
                         <td class="py-2 px-4 border truncate"><?= $row['Birth_date'] ?></td>
-                        <td class="py-2 px-4 border truncate">Edit Delete</td>
-                    </tr>
+                        <td class="py-2 px-4 border truncate flex gap-3 justify-center">
+                            <a href=""><button class="px-3 py-1 rounded-md bg-blue-500">Edit</button>
+                            </a> <a href="delGuest.php?id=<?php echo $row['ClientID'] ?>"><button class="px-2 py-1 rounded-md bg-red-500">Delete</button></a> 
+                        </td>                    </tr>
                 <?php endwhile; ?>
                 </tr>
                 </tbody>
